@@ -39,13 +39,11 @@ Singleton* Singleton::getInstance()
 
 void Singleton::setTest(int setValue)
 {
-    cout << "Test setting" << endl;
     m_data = setValue;
 }
 
 int Singleton::getTest()
 {
-    cout << "Test getting " << m_data << endl;
     return m_data;
 }
 
