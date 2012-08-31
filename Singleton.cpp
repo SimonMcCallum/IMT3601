@@ -25,7 +25,7 @@ private:
 public:
     static Singleton* getInstance();
     void setTest();
-    void getTest();
+    int getTest();
     ~Singleton()
     {
         //delete m_instance;
@@ -58,10 +58,11 @@ void Singleton::setTest(int setValue)
     cout << "Test setting" << endl;
     m_data = setValue;
 }
+
 int Singleton::getTest()
 {
     cout << "Test getting " << m_data << endl;
-    reutrn m_data;
+    return m_data;
 }
 
 
