@@ -7,7 +7,6 @@
 
 #include "Singleton.h"
 #include <iostream>
-
 using namespace std;
 
 
@@ -15,22 +14,7 @@ using namespace std;
    One of the most useful Design Patterns the Singleton Pattern
    There are good examples on Wiki, and the Game Programming Wiki
  */
-class Singleton
-{
-private:
-    static Singleton *m_instance;
-    Singleton();
-    int m_data;
-    
-public:
-    static Singleton* getInstance();
-    void setTest(int setValue);
-    int getTest();
-    ~Singleton()
-    {
-        //delete m_instance;
-    }
-};
+
 
 Singleton* Singleton::m_instance = NULL;
 
@@ -66,14 +50,3 @@ int Singleton::getTest()
 }
 
 
-int main()
-{
-    Singleton *sing1,*sing2;
-    
-    sing1 = Singleton::getInstance();
-    sing1->setTest(5);
-    sing2 = Singleton::getInstance();
-    sing2->getTest();
-    
-    return 0;
-}
