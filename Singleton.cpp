@@ -28,13 +28,13 @@ public:
     void getTest();
     ~Singleton()
     {
-        delete m_instance;
+        //delete m_instance;
     }
 };
 
 Singleton* Singleton::m_instance = NULL;
 
-Singleton* Singleton::m_instance()
+Singleton* Singleton::Singleton()
 {
     m_data = 0;
 };
