@@ -24,7 +24,7 @@ private:
     
 public:
     static Singleton* getInstance();
-    void setTest();
+    void setTest(int setValue);
     int getTest();
     ~Singleton()
     {
@@ -34,7 +34,7 @@ public:
 
 Singleton* Singleton::m_instance = NULL;
 
-Singleton* Singleton::Singleton()
+Singleton::Singleton()
 {
     m_data = 0;
 };
