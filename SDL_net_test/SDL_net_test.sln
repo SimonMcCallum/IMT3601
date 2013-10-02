@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_net_test_server", "SDL_net_test_server\SDL_net_test_server.vcxproj", "{3BAF1ED7-A5BB-4A16-90E6-9AA3EBB426EA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_net_test_client", "SDL_net_test_client\SDL_net_test_client.vcxproj", "{75575DAA-F7C6-40B1-89D1-981C36008B72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BAF1ED7-A5BB-4A16-90E6-9AA3EBB426EA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3BAF1ED7-A5BB-4A16-90E6-9AA3EBB426EA}.Debug|Win32.Build.0 = Debug|Win32
+		{3BAF1ED7-A5BB-4A16-90E6-9AA3EBB426EA}.Release|Win32.ActiveCfg = Release|Win32
+		{3BAF1ED7-A5BB-4A16-90E6-9AA3EBB426EA}.Release|Win32.Build.0 = Release|Win32
+		{75575DAA-F7C6-40B1-89D1-981C36008B72}.Debug|Win32.ActiveCfg = Debug|Win32
+		{75575DAA-F7C6-40B1-89D1-981C36008B72}.Debug|Win32.Build.0 = Debug|Win32
+		{75575DAA-F7C6-40B1-89D1-981C36008B72}.Release|Win32.ActiveCfg = Release|Win32
+		{75575DAA-F7C6-40B1-89D1-981C36008B72}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
