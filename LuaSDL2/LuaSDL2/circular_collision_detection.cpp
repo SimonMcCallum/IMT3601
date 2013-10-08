@@ -237,9 +237,6 @@ int ClosestEnemy(lua_State *L)
   distx = otherAgent->getCollider().x - agent->getCollider().x;
   disty = otherAgent->getCollider().y - agent->getCollider().y;
 
-  if(distx < 2){
-	  //otherAgent->move( wall, agent->getCollider(), SCREEN_WIDTH, SCREEN_HEIGHT );
-  }
 
   lua_pushnumber(L, distx); // return value
   lua_pushnumber(L, disty); // return value
