@@ -59,6 +59,14 @@ Circle& Agent::getCollider()
 	return mCollider;
 }
 
+Circle& Agent::getCollider(SDL_Point newPos)
+{
+	mColliderNext.r = AGENT_WIDTH / 2;
+	mColliderNext.x = newPos.x;
+	mColliderNext.y = newPos.y;
+	return mColliderNext;
+}
+
 //example of recursive overloading call.
 void Agent::setPosition(SDL_Point newPos)
 {

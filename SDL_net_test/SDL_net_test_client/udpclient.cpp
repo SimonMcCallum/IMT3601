@@ -22,6 +22,8 @@ int main(int argc, char **argv)
 	IPaddress server_address;  /* the server address */
 	UDPpacket *packet;         /* Pointer to packet memory */
 	int quit;
+	int x=23;
+	int y=15;
 	char * server_name = "127.000.000.001";  // This is the default server name, and creates enough memory to store other names from argv[1]
 	Uint16 port_number = 8880;  // This is a default port that is overridden by argv[2]
 	Uint16 default_client_port = 8881; // set to 0 for a random port
@@ -88,11 +90,21 @@ int main(int argc, char **argv)
 	{
 		printf("Fill the buffer\n>");
 		scanf("%s", (char *)packet->data);
+		packet->data[8]=(Uint8)x;
+		packet->data[9]=(Uint8)0;
+		packet->data[10]=(Uint8)0;
+		packet->data[11]=(Uint8)0;
+		packet->data[12]=(Uint8)y;
+		packet->data[13]=(Uint8)0;
+		packet->data[14]=(Uint8)0;
+		packet->data[15]=(Uint8)0
+			;
+
  
 		packet->address.host = server_address.host;	/* Set the destination host */
 		packet->address.port = server_address.port;	/* And destination port */
  
-		packet->len = strlen((char *)packet->data) + 1;
+		packet->len = 24;
 		SDLNet_UDP_Send(udpsock, -1, packet); /* This sets the p->channel */
  
 		/* Quit if packet contains "quit" */

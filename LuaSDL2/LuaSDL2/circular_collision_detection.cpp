@@ -22,7 +22,7 @@ This can be redistributed with acknowledgment
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
-int setupPositionX = 200;
+int setupPositionX = 20;
 int setupPositionY = 100;
 
 //Globals
@@ -200,12 +200,12 @@ void move(Agent* agent)
 	}
 	*/
 
-	if (Collidable::checkCollision(agent->getCollider(),otherAgent->getCollider()))
+	if (Collidable::checkCollision(agent->getCollider(newPos),otherAgent->getCollider()))
 	{
 		Collision = true;
 	}
 
-	if (Collidable::checkCollision(agent->getCollider(),wall))
+	if (Collidable::checkCollision(agent->getCollider(newPos),wall))
 	{
 		Collision = true;
 	}
@@ -296,7 +296,7 @@ int main( int argc, char* args[] )
 		{
 			L = lua_open();   /* opens Lua */
 			luaL_openlibs(L);             /* opens the basic library */
-			lua_register(L, "ClosestEnemy", ClosestEnemy);
+			lua_register(L, "getBadGuy", ClosestEnemy);
 			
 			int s = luaL_loadfile(L, "testAI.lua");
 			if ( s==0 ) {
@@ -304,6 +304,17 @@ int main( int argc, char* args[] )
 				s = lua_pcall(L, 0, LUA_MULTRET, 0);
 			}
 			report_errors(L, s);
+
+			lua_getglobal(L, "enemyX");
+			setupPositionX = lua_tonumber(L,-1);
+			lua_pop(L,1);
+
+			lua_getglobal(L, "enemyY");
+			setupPositionY = lua_tonumber(L,-1);
+			lua_pop(L,1);
+
+			otherAgent->setPosition(setupPositionX, setupPositionY);
+
  
 			//Main loop flag
 			bool quit = false;

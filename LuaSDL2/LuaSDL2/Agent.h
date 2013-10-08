@@ -33,6 +33,7 @@ class Agent
 
 		//Gets collision circle
 		Circle& getCollider();
+		Circle& getCollider(SDL_Point newPos);
 
 
 		//The X and Y offsets of the agent
@@ -43,6 +44,7 @@ class Agent
 		
 		//Agent's collision circle
 		Circle mCollider;
+		Circle mColliderNext;
 
 				//Moves the collision circle relative to the agent's offset
 		void setPosition(int x, int y);

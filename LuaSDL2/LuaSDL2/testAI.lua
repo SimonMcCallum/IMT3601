@@ -1,7 +1,9 @@
 io.write("Running ", _VERSION, "\n")
-a, b = ClosestEnemy(1, 2);
+a, b = getBadGuy(1, 2);
 io.write("ClosestEnemy() returned ", a," ", b, "\n")
 
 function findEnemy()
-  return ClosestEnemy(1, 2)
+  return getBadGuy(1, 2)
 end
+enemyX = 200
+enemyY = 200

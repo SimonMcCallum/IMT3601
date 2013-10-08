@@ -60,6 +60,10 @@ int main(int argc, char **argv)
 			printf("UDP Packet incoming\n");
 			printf("\tChan:    %d\n", p->channel);
 			printf("\tData:    %s\n", (char *)p->data);
+			printf("\tx,y:    %X\n", ((Uint32 *)p->data)[0]);
+			printf("\tx,y:    %X\n", ((Uint32 *)p->data)[1]);
+			printf("\tx:    %d\n", ((Uint32 *)p->data)[2]);
+			printf("\ty:    %d\n", ((Uint32 *)p->data)[3]);
 			printf("\tLen:     %d\n", p->len);
 			printf("\tMaxlen:  %d\n", p->maxlen);
 			printf("\tStatus:  %d\n", p->status);
@@ -68,7 +72,11 @@ int main(int argc, char **argv)
 			/* Quit if packet contains "quit" */
 			if (strcmp((char *)p->data, "quit") == 0)
 				quit = 1;
-		}		
+		}
+		else
+		{
+			SDL_Delay(20);
+		}
 	}
  
 	/* Clean and exit */
