@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AE242F49-E26E-4576-825E-DCD929A74FDE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SDLNet tutorial</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F0C8F1C3-6B9C-4A07-BACD-ADB4E74FAD5B</key>
+		<string>https://github.com/SimonMcCallum/IMT3601.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SDL_net_test/MacOSX/SDLNet tutorial.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F0C8F1C3-6B9C-4A07-BACD-ADB4E74FAD5B</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SimonMcCallum/IMT3601.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F0C8F1C3-6B9C-4A07-BACD-ADB4E74FAD5B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0C8F1C3-6B9C-4A07-BACD-ADB4E74FAD5B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IMT3601</string>
+		</dict>
+	</array>
+</dict>
+</plist>
