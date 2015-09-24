@@ -13,18 +13,31 @@ Updated by Simon McCallum October 2013
 #include <stdlib.h>
 #include <string.h>
  
+#ifdef __APPLE__
+
+// MacOSX specific
+#include <SDL2/SDL.h>
+#include <SDL2_net/SDL_net.h>
+
+#else
+
+// Windows or Linux
 #include <SDL.h>
 #include <SDL_net.h>
- 
+
+#endif
+
+
+
 int main(int argc, char **argv)
 {
 	UDPsocket udpsock;         /* Socket descriptor */
 	IPaddress server_address;  /* the server address */
 	UDPpacket *packet;         /* Pointer to packet memory */
 	int quit;
-	int x=23;
-	int y=15;
-	char * server_name = "127.000.000.001";  // This is the default server name, and creates enough memory to store other names from argv[1]
+	int x = 23;
+	int y = 15;
+	char* server_name = "127.000.000.001";  // This is the default server name, and creates enough memory to store other names from argv[1]
 	Uint16 port_number = 8880;  // This is a default port that is overridden by argv[2]
 	Uint16 default_client_port = 8881; // set to 0 for a random port
  
@@ -90,14 +103,14 @@ int main(int argc, char **argv)
 	{
 		printf("Fill the buffer\n>");
 		scanf("%s", (char *)packet->data);
-		packet->data[8]=(Uint8)x;
-		packet->data[9]=(Uint8)0;
-		packet->data[10]=(Uint8)0;
-		packet->data[11]=(Uint8)0;
-		packet->data[12]=(Uint8)y;
-		packet->data[13]=(Uint8)0;
-		packet->data[14]=(Uint8)0;
-		packet->data[15]=(Uint8)0
+		packet->data[8]  = (Uint8)x;
+		packet->data[9]  = (Uint8)0;
+		packet->data[10] = (Uint8)0;
+		packet->data[11] = (Uint8)0;
+		packet->data[12] = (Uint8)y;
+		packet->data[13] = (Uint8)0;
+		packet->data[14] = (Uint8)0;
+		packet->data[15] = (Uint8)0
 			;
 
  

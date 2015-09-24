@@ -12,9 +12,20 @@ Updated by Simon McCallum October 2013
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
- 
+
+#ifdef __APPLE__
+
+// MacOSX specific
+#include <SDL2/SDL.h>
+#include <SDL2_net/SDL_net.h>
+
+#else
+
+// Windows or Linux
 #include <SDL.h>
 #include <SDL_net.h>
+
+#endif
  
 int main(int argc, char **argv)
 {
@@ -51,6 +62,7 @@ int main(int argc, char **argv)
 	}
  
 	/* Main loop */
+    printf("Started up the UDP Server on port 8880\n");
 	quit = 0;
 	while (!quit)
 	{
