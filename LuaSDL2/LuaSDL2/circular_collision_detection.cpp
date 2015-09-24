@@ -253,21 +253,21 @@ void report_errors(lua_State *L, int status)
 
 
  /* call a function `AI' defined in Lua */
- double AIUpdate (double x, double y) {
-      double z;
-      /* push functions and arguments */
-      lua_getglobal(L, "findEnemy");  /* function to be called */
-      lua_pushnumber(L, x);   /* push 1st argument */
-      lua_pushnumber(L, y);   /* push 2nd argument */
-    
-      /* do the call (2 arguments, 1 result) */
-      if (lua_pcall(L, 2, 1, 0) != 0)
-        std::cerr << L, "error running function `f':",
-                 lua_tostring(L, -1);
-    
-      /* retrieve result */
-      if (!lua_isnumber(L, -1))
-         std::cerr << L, "function `f' must return a number";
+double AIUpdate(double x, double y) {
+	double z;
+	/* push functions and arguments */
+	lua_getglobal(L, "findEnemy");  /* function to be called */
+	lua_pushnumber(L, x);   /* push 1st argument */
+	lua_pushnumber(L, y);   /* push 2nd argument */
+
+	/* do the call (2 arguments, 1 result) */
+	if (lua_pcall(L, 2, 1, 0) != 0){
+		std::cerr << L, "error running function `f':", lua_tostring(L, -1);
+	}
+	/* retrieve result */
+	if (!lua_isnumber(L, -1)){
+		std::cerr << L, "function `f' must return a number";
+	}
       z = lua_tonumber(L, -1);
       lua_pop(L, 1);  /* pop returned value */
       return z;
@@ -322,7 +322,7 @@ int main( int argc, char* args[] )
 			//The agent that will be moving around on the screen
 
 			//Set the wall
-			wall.x = 300;
+			wall.x = 313;
 			wall.y = 40;
 			wall.w = 40;
 			wall.h = 400;
@@ -344,7 +344,7 @@ int main( int argc, char* args[] )
 					otherAgent->handleEvent( e );
 				}
 
-				AIUpdate(0.2,0.3); //What every you want to send
+				AIUpdate(0.2,0.3); //
 
 				//Move the agent and check collision
 				move(agent); //wall, otherAgent->getCollider() , SCREEN_WIDTH, SCREEN_HEIGHT  );
